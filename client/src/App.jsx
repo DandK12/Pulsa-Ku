@@ -9,6 +9,10 @@ import Wallet from './pages/seller/Wallet'
 import Transactions from './pages/seller/Transactions'
 import Profile from './pages/seller/Profile'
 import Withdrawals from './pages/admin/Withdrawals'
+import TestAPI from './pages/admin/testAPI'
+import Layanan from './pages/admin/Layanan'
+import BeliCepat from './pages/admin/BeliCepat'
+import PaymentPage from './pages/admin/PaymentPage'
 import ProtectedRoute from './components/ProtectedRoute'
 import RoleRoute from './components/RoleRoute'
 import { Toaster } from 'react-hot-toast'
@@ -42,6 +46,10 @@ export default function App() {
           <Route element={<RoleRoute role="admin" />}>
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin/withdrawals" element={<Withdrawals />} />
+            <Route path="/admin/test-api" element={<TestAPI />} />
+            <Route path="/admin/layanan" element={<Layanan />} />
+            <Route path="/admin/beli-cepat" element={<BeliCepat />} />
+            <Route path="/admin/payment/:transactionId" element={<PaymentPage />} />
           </Route>
         </Route>
         <Route path="*" element={<Navigate to="/login" />} />

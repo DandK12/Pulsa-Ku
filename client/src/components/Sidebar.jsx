@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { Home, ShoppingCart, History, Wallet, Users, LogOut, Zap, X, Sun, Moon, UserCog } from 'lucide-react'
+import { Home, ShoppingCart, History, Wallet, Users, LogOut, Zap, X, Sun, Moon, UserCog, FlaskConical, LayoutList, ShoppingBag } from 'lucide-react'
 import { useAuthStore } from '../store/authStore'
 import { useThemeStore } from '../store/themeStore'
 import toast from 'react-hot-toast'
@@ -21,7 +21,9 @@ export default function Sidebar({ open, setOpen }) {
   const adminMenu = [
     { icon: Home, label: 'Dashboard', to: '/admin' },
     { icon: Users, label: 'Penarikan', to: '/admin/withdrawals' },
-    { icon: UserCog, label: 'Edit Profil', to: '/profile' },
+    { icon: ShoppingBag, label: 'Beli Cepat', to: '/admin/beli-cepat' },
+    { icon: LayoutList, label: 'Layanan', to: '/admin/layanan' },
+    { icon: FlaskConical, label: 'Test API', to: '/admin/test-api' },
   ]
 
   const menuItems = user?.role === 'admin' ? adminMenu : sellerMenu
